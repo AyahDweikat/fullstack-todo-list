@@ -8,6 +8,7 @@ const connection = mysql.createConnection({
   host: '127.0.0.1',
   user: 'root',
   database: 'todolist',
+  port:"3001"
 });
 app.use((_req, res, next) => {
   // res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
