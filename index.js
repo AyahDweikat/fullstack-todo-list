@@ -8,6 +8,7 @@ const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   database: 'todolist',
+  socketPath:'/Applications/MAMP/tmp/mysql/mysql.sock'
 });
 app.use((_req, res, next) => {
   // res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
