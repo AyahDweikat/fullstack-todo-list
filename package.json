@@ -1,20 +1,21 @@
 {
-    "name": "fullstack-todolist",
-    "version": "1.0.0",
-    "description": "some description",
-    "main": "./server/index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "cd ./server && node index.js"
-    },
-    "engines": {
-      "node": "16.x"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "cors": "^2.8.5",
-      "express": "^4.17.2"
-    }
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mysql2": "^3.3.0",
+    "path": "^0.12.7",
+    "sequelize": "^6.31.1"
   }
+}
