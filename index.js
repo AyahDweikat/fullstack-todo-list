@@ -18,7 +18,9 @@ app.use((_req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-
+app.get("/", (req, res) => {
+  return res.json({ message: "Getting API successfully", status:200});
+});
 
 app.get("/getTasks", (req, res) => {
   let sql = `SELECT * FROM todos`;
