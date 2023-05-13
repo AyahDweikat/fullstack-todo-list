@@ -3,12 +3,11 @@ const mysql = require('mysql2');
 const bodyParser = require("body-parser");
 const app = express();
 app.use(express.json())
-const PORT = 3000;
+const PORT = 3001;
 const connection = mysql.createConnection({
-  host: '0.0.0.0',
+  host: 'localhost',
   user: 'root',
   database: 'todolist',
-  port:"3001"
 });
 app.use((_req, res, next) => {
   // res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
