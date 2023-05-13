@@ -21,7 +21,7 @@ app.use(bodyParser.json())
 
 
 // serve up production assets
-app.use(express.static('client/build'));
+app.use(express.static('build'));
 // let the react app to handle any unknown routes 
 // serve up the index.html if express does'nt recognize the route
 const path = require('path');
