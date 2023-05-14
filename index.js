@@ -14,7 +14,7 @@ var db_config = {
   host: 'localhost',
     user: 'root',
     database: 'todolist',
-    // socketPath:"/tmp/mysql.sock"
+    _socket:"/tmp/mysql.sock"
 };
 
 var connection;
