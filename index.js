@@ -5,10 +5,11 @@ const app = express();
 app.use(express.json())
 const PORT = 3000;
 const connection = mysql.createConnection({
-  host: '127.0.0.1',
+  host: 'localhost',
   port:3306,
   user: 'root',
   database: 'todolist',
+  socketPath: '/tmp/mysql.sock',
 });
 // app.use((_req, res, next) => {
 //   // res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
