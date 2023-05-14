@@ -11,7 +11,7 @@ const PORT = 3000;
 // });
 
 var db_config = {
-  host: '127.0.0.1',
+  host: 'localhost',
     user: 'root',
     database: 'todolist',
     // socketPath:"/tmp/mysql.sock"
