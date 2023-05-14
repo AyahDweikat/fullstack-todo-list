@@ -1,14 +1,14 @@
 const express = require("express");
-// const mysql = require('mysql2');
+const mysql = require('mysql2');
 // const bodyParser = require("body-parser");
 const app = express();
 app.use(express.json())
 const PORT = 3000;
-// const connection = mysql.createConnection({
-//   host: 'localhost',
-//   user: 'root',
-//   database: 'todolist',
-// });
+const connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  database: 'todolist',
+});
 // app.use((_req, res, next) => {
 //   // res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
 //   res.header('Access-Control-Allow-Headers', '*');
@@ -22,15 +22,15 @@ app.get("/", (req, res) => {
   return res.json({ message: "Getting API successfully", status:200});
 });
 
-// app.get("/getTasks", (req, res) => {
-//   let sql = `SELECT * FROM todos`;
-//     connection.execute(sql, (err, result)=>{
-//         if(err){
-//             return res.json({message:'error in sql', err})
-//         }
-//         return res.json({ message: "Getting tasks successfully", status:200, todos:result });
-//     })
-// });
+app.get("/getTasks", (req, res) => {
+  let sql = `SELECT * FROM todos`;
+    connection.execute(sql, (err, result)=>{
+        if(err){
+            return res.json({message:'error in sql', err})
+        }
+        return res.json({ message: "Getting tasks successfully", status:200, todos:result });
+    })
+});
 // app.post("/addTasks", (req, res) => {
 //   let {id, task, assignee, isDone} = req.body;
 //     let sql = `INSERT INTO todos(id, task, assignee, isDone) VALUES ('${id}','${task}','${assignee}', ${isDone})`
