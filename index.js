@@ -1,7 +1,16 @@
 const express = require("express");
 const app = express();
+const bodyParser = require("body-parser");
 app.use(express.json());
 const PORT = 3000;
+app.use((_req, res, next) => {
+  // res.header('Access-Control-Allow-Origin', 'http://localhost:5173');
+  res.header('Access-Control-Allow-Headers', '*');
+  res.header("Access-Control-Allow-Methods", "POST, PUT, GET, OPTIONS, DELETE, PATCH")
+  next();
+});
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 let todos = [];
 app.get("/", (req, res) => {
   return res.json({ message: "Getting API successfully", status: 200 });
